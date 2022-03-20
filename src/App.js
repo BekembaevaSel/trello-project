@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import LoginPage from './components/loginPage/LoginPage'
+import './App.css'
+import TodoForm from './components/mainLayout/TodoForm'
+import { Route, Routes, BrowserRouter } from 'react-router-dom'
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<div>
+			<BrowserRouter>
+				<Routes>
+					<Route path='/' element={<LoginPage />}></Route>
+					<Route path='/TodoForm' element={<TodoForm />}></Route>
+				</Routes>
+			</BrowserRouter>
+		</div>
+	)
 }
 
-export default App;
+export default App
